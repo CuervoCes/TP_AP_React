@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguro No Pagamos S.A.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="div-text">
+        <h1>Seguro NO Pagamos S.A.</h1>
+    </div>
+    <form action="post">
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Apellido">
+        <input type="number" placeholder="DNI">
+        <input type="email" placeholder="Email">
+        <input type="numbre" placeholder="Teléfono">
+        <label for="tipoSeguro">Tipo de Seguro</label>
+        <select name="tipoSeguro" id="tipoSeguro">
+            <option value="" selected disabled>Seleccione un seguro</option>
+            <option value="$500">Básico</option>
+            <option value="$1.000">Intermedio</option>
+            <option value="$1.500">Premium</option>
+        </select>
+        <!-- <label for="valorSeguro">Valor:</label> -->
+        <input name="valorSeguro" id="valorSeguro" type="text" disabled value="$-">
+        <button id="button">Enviar</button>
+    </form>
+
+    <script src="./main.js"></script>
+</body>
+</html>

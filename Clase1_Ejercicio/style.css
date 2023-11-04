@@ -1,0 +1,34 @@
+.div-text{
+    margin: 0 30px;
+    width: 100%;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 6vw;
+    text-align: center;
+}
+
+form{
+    position: absolute;
+    background-color: rgba(200,200 , 200, 0.5);
+    padding: 5px;
+    margin: 5px 40%;
+}
+
+input, select{
+    padding: 2px;
+    margin: 10px 5px;
+    display: block;
+    text-align: center;
+    font-size: 1vw;
+}
+
+/* #tipoSeguro{
+    Dar Estilo
+} */
+
+button{
+    align-content: center;
+}
