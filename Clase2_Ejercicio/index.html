@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-  
+    <title>Clase 2 ejercitacion</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Calculadora</h1>
+    <h1>Ejercicio 1</h1>
     <div>
-        <input type="number" id="n1">
-        <input type="number" id="n2">
+        <p>Tengo desarrollada la siguiente función en javascript</p>
+
+        <img src="funcion.jpg">
+
+        <p class="ask">¿Que es el tercer parámetro recibido?</p>
+
+        <p>El tercer parámetro recibido en la función suma es una función de "callback". En JavaScript, un callback es una función que se pasa como argumento a otra función y se ejecuta después de que se complete la función principal.</p>
+
+        <p class="ask">¿En que casos es obligatorio desarrollar este tipo de funciones?</p>
+
+        <p> Los callbacks se utilizan para manejar la lógica que debe ejecutarse después de que una operación asincrónica haya finalizado, como una solicitud a un servidor, una lectura de archivos, o cualquier otra operación que no sea instantánea.</p>
+        
+        <p>Realizar un llamado a la función de ejemplo.</p>
+    </div>
+    <h1>Ejercicio 2</h1>
+    <h2>Calculadora</h2>
+    <div id="calculadora">
+        <div class="block">
+        <input type="number" class="numsty" id="n1">
+        <input type="number" class="numsty" id="n2">
+        </div>
+        <div class="block">
         <button id="sumar" class="btn">Sumar</button>
         <button id="restar" class="btn">Restar</button>
         <button id="multiplicar" class="btn">Multiplicar</button>
         <button id="dividir" class="btn">Dividir</button>
-        <input type="text" id="resultado" disabled>
+        </div>
+        <div class="block">
+        <input type="text" class="numsty" id="resultado" disabled>
+        </div>
     </div>
 
     <script src="./main.js"></script>
