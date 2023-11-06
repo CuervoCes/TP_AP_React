@@ -13,3 +13,5 @@ tipo_seguros.addEventListener('change', () => {
 button.addEventListener("click", ()=>{
     alert("Mensaje de clic")
 })
+
+
