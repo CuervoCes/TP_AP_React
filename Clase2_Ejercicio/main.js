@@ -59,3 +59,13 @@ botones.forEach(boton => {
         }
     })
 });
+
+// LLAMADO A LA FUNCION
+function suma (a,b,callback){
+    let c = a+b
+    callback(c)
+}
+function miCallback(c) {
+    console.log(c)
+}
+suma(6,5,miCallback)

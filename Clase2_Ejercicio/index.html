@@ -22,10 +22,23 @@
         <p> Los callbacks se utilizan para manejar la lógica que debe ejecutarse después de que una operación asincrónica haya finalizado, como una solicitud a un servidor, una lectura de archivos, o cualquier otra operación que no sea instantánea.</p>
         
         <p>Realizar un llamado a la función de ejemplo.</p>
+
+        <p>
+        function suma (a,b,callback){
+            let c = a+b
+            callback(c)
+        }
+
+        function miCallback(c) {
+            console.log(c)
+        }
+
+        suma(6,5,miCallback)
+        </p>
     </div>
     <h1>Ejercicio 2</h1>
-    <h2>Calculadora</h2>
     <div id="calculadora">
+        <h2>Calculadora</h2>
         <div class="block">
         <input type="number" class="numsty" id="n1">
         <input type="number" class="numsty" id="n2">

@@ -13,12 +13,11 @@ body{
 
 }
 
-h1{
+h1, h2{
     color: brown;
     margin:30px;
-
+    text-align: center; 
 }
-
 
 p {
     margin: 20px;
@@ -28,29 +27,56 @@ p {
     font-weight: bold;
 }
 
-#calculadora{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    margin: 20px;
+#calculadora {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    align-items: center;
 }
 
-.block{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px;
-
+.numsty {
+    width: 210px;
+    padding: 10px 20px;
+    margin: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center; 
+    font-size: 24px; 
+    font-weight: bold;
+    color: #3d8e3f;
 }
 
-.numsty{
-    margin: 10px;
-    padding: 15px;
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.btn{
-    margin: 15px;
-    padding: 15px;
-    background-color: rgba(165, 42, 42, 0.656);
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#sumar, #restar, #multiplicar, #dividir {
+    width: 210px;
+    display: inline-block;
+}
+
+#resultado {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: bold;
+    width: 435px;
+    color: red; 
+    text-align: center; 
+    font-size: 24px; 
 }
