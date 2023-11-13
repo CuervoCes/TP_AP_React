@@ -1,0 +1,20 @@
+body{
+    background-color: bisque;
+}
+
+h1{
+    text-align: center;
+}
+
+.div-saludo{
+    text-align: center;
+    margin: 80px 25px;
+}
+
+.tituloSaludo{
+    color: red  ;
+}
+
+.saludoDin{
+    font-size: 40px;
+}
