@@ -1,0 +1,25 @@
+*{
+  margin: 15px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+body{
+  background-color: blanchedalmond;
+}
+
+h1{
+  text-decoration: underline;
+}
+
+p{
+  font-size: 20px;
+}
+
+#btn-color{
+  font-size: 15px;
+  color: white;
+  background-color: blue;
+  padding: 4px;
+  border-radius: 7%;
+  width: 8rem;
+}
