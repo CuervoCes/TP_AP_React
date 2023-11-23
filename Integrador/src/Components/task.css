@@ -1,0 +1,22 @@
+.titulo-tareas{
+    text-align: center;
+}
+
+.agregar-tarea{
+    text-align: right;
+}
+
+.lista-tareas{
+    position: relative;
+    padding: 3px;
+  }
+
+.encabezado-lista{
+    font-size: 25px;
+}
+
+.item-lista{
+    font-size: 25px;
+    margin: 2px 70px;
+    padding: 3px 10px;
+}
