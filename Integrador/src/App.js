@@ -8,7 +8,13 @@ function App() {
   const [tareas, setTareas] = useState([]);
 
   const sumarTarea = (nombreTarea) => {
-    let id_aux = tareas.length +1;
+    let id_aux = 0;
+    if (tareas.length === 0){
+      id_aux = 1;
+    } else {
+      id_aux = tareas[tareas.length-1].id + 1
+    }
+    
     //LA SIGUIENTE VARIABLE LA UTILIZO PARA BORRAR ESPACIOS ANTERIORES AL NOMBRE DE LA TAREA
     let nombreTareaSinEspacio = nombreTarea.trim();
     setTareas(
@@ -23,7 +29,7 @@ function App() {
   const eliminarTarea = (id) => {
     let opcion = window.confirm ("¿Realmente desea eliminar la tarea?");
     if (opcion) {
-        let nuevaListaTareas = tareas.filter(tarea => tareas.id !== id);
+        let nuevaListaTareas = tareas.filter(tareas => tareas.id !== id);
         setTareas(nuevaListaTareas);
     }
   }
@@ -48,8 +54,7 @@ function App() {
       <div>
         {/*DEBAJO PASO COMO PARÁMETRO LA FUNCIÓN sumarTares PARA AGREGAR LA NUEVA TAREA A LA LISTA*/}
         <TaskForm agregarTarea={sumarTarea}/>
-        <TaskList tareas={tareas}/>
-        <button onClick={()=>{eliminarTarea(1)}}>Eliminar</button>
+        <TaskList tareas={tareas} eliminarTarea={eliminarTarea}/>
       </div>
 
     </div>

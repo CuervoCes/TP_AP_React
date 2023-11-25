@@ -1,7 +1,7 @@
 import './task.css';
 
 
-const TaskList = ({tareas}) => { //El parámetro tarea lo recibo desde app.js y lo desestructuro con las {}
+const TaskList = ({tareas, eliminarTarea}) => { //El parámetro tarea lo recibo desde app.js y lo desestructuro con las {}
 
   return (
     <>
@@ -36,7 +36,7 @@ const TaskList = ({tareas}) => { //El parámetro tarea lo recibo desde app.js y 
                   <button 
                     className='btn btn-danger' 
                     value={tareas.id}
-                    // onClick={eliminarTarea(tarea_aux.id)}
+                    onClick={()=>eliminarTarea(tarea_aux.id)}
                     >
                     X
                   </button>
