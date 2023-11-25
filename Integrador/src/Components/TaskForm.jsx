@@ -15,7 +15,7 @@ const TaskForm = (props) => {
     <div className='agregar-tarea container'>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Ingrese la nueva tarea' onChange={(e) => setNuevaTarea(e.target.value)} value={nuevaTarea}/>
-        <button>Guardar Tarea</button>
+        <button>Agregar Tarea</button>
       </form>
     </div>
   )

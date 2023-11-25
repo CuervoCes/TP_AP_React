@@ -34,6 +34,17 @@ function App() {
     }
   }
 
+  const modificarTarea = (id) => {
+      let nuevaListaTareas = tareas.map(tarea_aux => {
+                                                  if (tarea_aux.id === id){
+                                                    tarea_aux.completada = true;
+                                                  }
+                                                  return tarea_aux;
+                                                });
+      setTareas(nuevaListaTareas);
+  }
+  
+
   //USO EL SIGUIENTE useEffect para cargar inicialmente las tareas existentes en la sesión del navegador
   useEffect(()=>{
     let datos = localStorage.getItem('lista_tareas');
@@ -54,7 +65,8 @@ function App() {
       <div>
         {/*DEBAJO PASO COMO PARÁMETRO LA FUNCIÓN sumarTares PARA AGREGAR LA NUEVA TAREA A LA LISTA*/}
         <TaskForm agregarTarea={sumarTarea}/>
-        <TaskList tareas={tareas} eliminarTarea={eliminarTarea}/>
+        <TaskList tareas={tareas} eliminarTarea={eliminarTarea} modificarTarea={modificarTarea}/>
+        <button onClick={()=>{}}>Btn de Prueba</button>
       </div>
 
     </div>
