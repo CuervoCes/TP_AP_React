@@ -1,8 +1,6 @@
 import React,{useEffect, useState} from 'react';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import './App.css';
 import TaskForm from './Components/TaskForm';
-// import Task from './Components/Task'
 import TaskList from './Components/TaskList';
 
 function App() {
@@ -10,23 +8,25 @@ function App() {
   const [tareas, setTareas] = useState([]);
 
   const sumarTarea = (nombreTarea) => {
-    
-    let id_aux = 0;
-    //EL IF SOLO HAGO PARA CONTROLAR EL ID EN LA PRIMERA OCASIÓN
-    if (tareas.length === 0){ 
-      id_aux = 1
-    } else {
-      id_aux = tareas[tareas.length -1].id +1;
-    }
-
+    let id_aux = tareas.length +1;
+    //LA SIGUIENTE VARIABLE LA UTILIZO PARA BORRAR ESPACIOS ANTERIORES AL NOMBRE DE LA TAREA
+    let nombreTareaSinEspacio = nombreTarea.trim();
     setTareas(
       [...tareas, {
         id: id_aux,
-        nombre_tarea: nombreTarea,
+        nombre_tarea: nombreTareaSinEspacio,
         completada: false
       }]
-      )
+    )
   };
+
+  const eliminarTarea = (id) => {
+    let opcion = window.confirm ("¿Realmente desea eliminar la tarea?");
+    if (opcion) {
+        let nuevaListaTareas = tareas.filter(tarea => tareas.id !== id);
+        setTareas(nuevaListaTareas);
+    }
+  }
 
   //USO EL SIGUIENTE useEffect para cargar inicialmente las tareas existentes en la sesión del navegador
   useEffect(()=>{
@@ -39,34 +39,22 @@ function App() {
   //UTILIZO ESTE USEEFFECT PARA AGREGAR LA LISTA DE TAREAS AL STORAGE
   useEffect(()=>{
     localStorage.setItem('lista_tareas', JSON.stringify(tareas))
-  }, [tareas]) //COLOCO tarea para indicar que cuando esa variable cambie se lleve a cabo el localStorage.setItem
+  }, [tareas]) //COLOCO [tareas] para indicar que cuando esa variable cambie se lleve a cabo el localStorage.setItem
 
   return (
 
     <div className="App"> 
 
-      {/* <Router>
-
-        <div className='btn-group'>
-          <Link className='btn btn-dark' to={'/agregar'}> Agregar Tarea</Link>
-        </div>
-
-        <Routes>
-          <Route path='/agregar'> </Route>
-          <Route path='/'> <App/> </Route>
-        </Routes>
-
-      </Router> */}
-      
       <div>
         {/*DEBAJO PASO COMO PARÁMETRO LA FUNCIÓN sumarTares PARA AGREGAR LA NUEVA TAREA A LA LISTA*/}
         <TaskForm agregarTarea={sumarTarea}/>
         <TaskList tareas={tareas}/>
+        <button onClick={()=>{eliminarTarea(1)}}>Eliminar</button>
       </div>
 
     </div>
+  )
+};  
 
-  );
-}
 
 export default App;
