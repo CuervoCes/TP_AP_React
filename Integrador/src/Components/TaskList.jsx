@@ -1,4 +1,5 @@
 import TaskItem from './TaskItem';
+import { Link } from 'react-router-dom';
 import './task.css';
 
 
@@ -6,6 +7,9 @@ const TaskList = ({tareas, eliminarTarea, modificarTarea}) => { //El parámetro 
 
   return (
     <>
+      <div className='col-sm-12 d-flex justify-content-end'>
+        <Link to="/agregar_tarea" className='btn btn-success m-2'>+</Link>
+      </div>
       <h1 className="titulo-tareas">Lista de Tareas</h1>
       <table className="table table-striped">
         <thead className="thead-dark encabezado-lista">

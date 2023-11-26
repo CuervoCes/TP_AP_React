@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import TaskForm from './Components/TaskForm';
 import TaskList from './Components/TaskList';
@@ -6,6 +7,7 @@ import TaskList from './Components/TaskList';
 function App() {
 
   const [tareas, setTareas] = useState([]);
+  // const navigate = useNavigate()
 
   const sumarTarea = (nombreTarea) => {
     let id_aux = 0;
@@ -24,6 +26,7 @@ function App() {
         completada: false
       }]
     )
+    // navigate('/');
   };
 
   const eliminarTarea = (id) => {
@@ -56,16 +59,24 @@ function App() {
   //UTILIZO ESTE USEEFFECT PARA AGREGAR LA LISTA DE TAREAS AL STORAGE
   useEffect(()=>{
     localStorage.setItem('lista_tareas', JSON.stringify(tareas))
+    
   }, [tareas]) //COLOCO [tareas] para indicar que cuando esa variable cambie se lleve a cabo el localStorage.setItem
 
+ 
   return (
-
     <div className="App"> 
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/agregar_tarea' element={<TaskForm agregarTarea={sumarTarea}/>} />
+        <Route path='/'exact element={<TaskList tareas={tareas} eliminarTarea={eliminarTarea} modificarTarea={modificarTarea}/>}/>
+      </Routes>
+    </BrowserRouter>
 
       <div>
         {/*DEBAJO PASO COMO PARÁMETRO LA FUNCIÓN sumarTares PARA AGREGAR LA NUEVA TAREA A LA LISTA*/}
-        <TaskForm agregarTarea={sumarTarea}/>
-        <TaskList tareas={tareas} eliminarTarea={eliminarTarea} modificarTarea={modificarTarea}/>
+        {/* <TaskForm agregarTarea={sumarTarea}/>
+        <TaskList tareas={tareas} eliminarTarea={eliminarTarea} modificarTarea={modificarTarea}/> */}
         {/* <button onClick={()=>{}}>Btn de Prueba</button> */}
       </div>
 
