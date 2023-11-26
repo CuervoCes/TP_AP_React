@@ -66,7 +66,7 @@ function App() {
         {/*DEBAJO PASO COMO PARÁMETRO LA FUNCIÓN sumarTares PARA AGREGAR LA NUEVA TAREA A LA LISTA*/}
         <TaskForm agregarTarea={sumarTarea}/>
         <TaskList tareas={tareas} eliminarTarea={eliminarTarea} modificarTarea={modificarTarea}/>
-        <button onClick={()=>{}}>Btn de Prueba</button>
+        {/* <button onClick={()=>{}}>Btn de Prueba</button> */}
       </div>
 
     </div>
